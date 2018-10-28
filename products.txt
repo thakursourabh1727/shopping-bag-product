@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Facebook - The Social Network</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="assets/css/style.css"/>
+        <style>
+            .main {
+                padding: 30px 100px;
+                display: inline-block;
+                width: 100%;
+            }
+            .pbox{
+                display: inline-block;
+                box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.1);
+                padding: 0px;   
+                border: 1px solid rgba(0,0,0,0.1);
+            }
+            
+            .pbox .thumbnail{
+                width:100%;
+                display: inline-block;
+            }
+            .thumbnail img{
+                max-width:100%;
+                width: auto;
+                height: auto;
+                display: inline-block;
+            }
+            .pbox-body{
+                padding: 5px 10px;
+            }
+            .pbox-price{
+                color: green;
+                float: right;
+                display: inline-block;
+            }
+            .pbtn{
+                width:100%;
+                padding:10px 20px;
+            }
+            .ptitle{
+                margin-bottom:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header no-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo">
+                            <h1>Kripling</h1>
+                        </div>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 pull-right">
+                            <form action="search.html" method="POST">
+                                <input type="text" name="search" class="input-lg col-sm-12" placeholder="search"/>
+                            </form>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-3 text-center pull-right">
+                        <a href="#" onclick="toggleMenu();" id="toggleMenu" class="btn btn-primary input-lg bg-transparent-dark-light">Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-menu">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul>
+                            <li>
+                                <a href="./index.html">Home</a>
+                            </li>
+                            <li>
+                                <a class="active" href="./products.html">Products</a>
+                            </li>
+                            <li>
+                                <a href="./signup.html">Signup</a>
+                            </li>
+                            <li>
+                                <a href="./login.html">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            window.header_menu = false;
+            function toggleMenu(){
+                var btn = document.querySelector("#toggleMenu");
+                var header_menu = document.querySelector(".header-menu");
+                var header_menu_container = document.querySelector(".header-menu>.container-fluid");
+                if(window.header_menu){
+                    window.header_menu=false;
+                    btn.innerHTML = "Menu";
+                    header_menu_container.style.transform="translateY(-100%)";
+                    setTimeout(function(){
+                        header_menu.style.display="none";
+                    },300);
+                }else{
+                    window.header_menu=true;
+                    header_menu.style.display="block";
+                    btn.innerHTML = "&times;";
+                    setTimeout(function(){
+                        header_menu_container.style.transform="translateY(0%)";
+                    },300);
+                }
+            }
+        </script>
+        <div class="main">
+            <div class="pbox col-sm-3">
+                <div class="thumbnail">
+                    <img src="assets/imgs/3.jpg"/>
+                </div>
+                <div class="pbox-body">
+                    <h4 class="ptitle">Shopping Bag <small class="pbox-price">$100</small></h4>
+                    <p>Carry fashion in your hand.</p>
+                </div>                
+                <a href="#" class="btn btn-primary pbtn">Buy Now</a>
+            </div>
+            <div class="pbox col-sm-3">
+                <div class="thumbnail">
+                    <img src="assets/imgs/laptop.jpg"/>
+                </div>
+                <div class="pbox-body">
+                    <h4 class="ptitle">Laptop bag <small class="pbox-price">$80</small></h4>
+                    <p>Carry technology with style.</p>
+                </div>                
+                <a href="#" class="btn btn-primary pbtn">Buy Now</a>
+            </div>
+            <div class="pbox col-sm-3">
+                <div class="thumbnail">
+                    <img src="assets/imgs/trekk2.jpg"/>
+                </div>
+                <div class="pbox-body">
+                    <h4 class="ptitle">Trekking Bag<small class="pbox-price">$150</small></h4>
+                    <p>Climb your way up with fashion </p>
+                </div>                
+                <a href="#" class="btn btn-primary pbtn">Buy Now</a>
+            </div>
+            <div class="pbox col-sm-3">
+                <div class="thumbnail">
+                    <img src="assets/imgs/gym1.jpg"/>
+                </div>
+                <div class="pbox-body">
+                    <h4 class="ptitle">Gym bag<small class="pbox-price">$40</small></h4>
+                    <p>Burn calories and kill them with your style.</p>
+                </div>                
+                <a href="#" class="btn btn-primary pbtn">Buy Now</a>
+            </div>
+        </div>
+        <div class="footer no-shadow">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-12">
+                        &copy; Kripling 2017.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
